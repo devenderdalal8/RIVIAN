@@ -26,5 +26,7 @@
     <string name="available">3 / 5 Available</string>
     <string name="_1_5mi">1.5mi</string>
     <string name="control">Control</string>
+    <string name="unlock">Unlock</string>
+    <string name="start">Start</string>
 
 </resources>

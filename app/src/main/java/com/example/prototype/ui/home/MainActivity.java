@@ -103,7 +103,6 @@ public class MainActivity extends AppCompatActivity {
             mBinding.svBottom.startAnimation(bottomAnimation);
             mBinding.tvTitle.setText(getString(R.string.carModel));
             mBinding.ivSetting.setImageResource(R.drawable.ic_baseline_settings_24);
-            mBinding.hideMainGroup.setVisibility(View.VISIBLE);
         });
 
         mBinding.includeMainBottom.cvTemp.setOnClickListener(view -> {
