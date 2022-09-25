@@ -1,0 +1,95 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvBatteryLevel"
+                style="@style/Text.Title.20sp.ApproxBlack.ProductSans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fifteenDp"
+                android:text="@string/battery_level"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivDoubt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fifteenDp"
+                android:src="@drawable/ic_doubt_icon"
+                app:layout_constraintBottom_toBottomOf="@+id/tvBatteryLevel"
+                app:layout_constraintStart_toEndOf="@+id/tvBatteryLevel"
+                app:layout_constraintTop_toTopOf="@+id/tvBatteryLevel" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/sbBattery"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/thirteen_dp"
+                android:layout_marginTop="16dp"
+                android:layout_marginEnd="@dimen/fifteenDp"
+                android:progress="50"
+                android:progressDrawable="@drawable/battery_custum_seekbar"
+                android:thumb="@drawable/battery_seekbar_thumb"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.0"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvBatteryLevel" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvOpenCharger"
+                style="@style/Text.Title.20sp.ApproxBlack.ProductSans"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fifteenDp"
+                android:layout_marginTop="@dimen/thirtyFour_dp"
+                android:layout_marginEnd="@dimen/fifteenDp"
+                android:background="@drawable/text_background"
+                android:gravity="center"
+                android:padding="@dimen/ten_dp"
+                android:text="@string/open_charge_port"
+                android:textColor="#5D5E61"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sbBattery" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCharging"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fifteenDp"
+                android:text="@string/chargers_near_you"
+                android:textColor="@color/black"
+                android:textSize="20sp"
+                android:textStyle="bold"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvOpenCharger" />
+
+            <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/rvChargingPoint"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fifteenDp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvCharging"
+                tools:itemCount="2"
+                tools:listitem="@layout/item_charging_point" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

@@ -1,0 +1,30 @@
+<resources>
+    <string name="app_name">ProtoType</string>
+    <string name="rivian">RIVIAN</string>
+    <string name="carModel">Nails r1t</string>
+    <string name="charging">Charging</string>
+    <string name="interiorTemp">Interior 88° F</string>
+    <string name="sixtyFiveTemp">65°</string>
+    <string name="seventyFiveTemp">75°</string>
+    <string name="EightyFiveTemp">85°</string>
+    <string name="location">220 East Grove</string>
+    <string name="locationCountry">Bloomington , Il</string>
+    <string name="mile">248 mi</string>
+    <string name="energy">Energy</string>
+    <string name="energyTitle">ENERGY</string>
+    <string name="remaining">Remaining</string>
+    <string name="airon">Airon</string>
+    <string name="aircon">AIRCON</string>
+    <string name="on">On</string>
+    <string name="twentyFoueF">24°F</string>
+    <string name="interior">Interior</string>
+    <string name="turn_off">turn off</string>
+    <string name="battery_level">Battery level</string>
+    <string name="open_charge_port">Open charge port</string>
+    <string name="chargers_near_you">Chargers near you</string>
+    <string name="address">100 N Mitsubishi Motorway, Normal, IL, 61761</string>
+    <string name="available">3 / 5 Available</string>
+    <string name="_1_5mi">1.5mi</string>
+    <string name="control">Control</string>
+
+</resources>

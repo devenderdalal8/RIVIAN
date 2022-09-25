@@ -1,0 +1,174 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivBackground"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            android:background="@drawable/pattern"
+            app:layout_constraintBottom_toTopOf="@+id/view"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <View
+            android:id="@+id/view"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.45" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivCar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:src="@drawable/car"
+            app:layout_constraintBottom_toBottomOf="@+id/view"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/view"
+            app:layout_constraintVertical_bias="0.72" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivSetting"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteenDp"
+            android:layout_marginTop="@dimen/twentyDp"
+            android:src="@drawable/ic_baseline_settings_24"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvTitle"
+            style="@style/Text.Title.15sp.white.ProductSans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/carModel"
+            android:textAllCaps="true"
+            app:layout_constraintBottom_toBottomOf="@+id/ivSetting"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/ivSetting" />
+
+        <androidx.cardview.widget.CardView
+            android:layout_width="40dp"
+            android:layout_height="40dp"
+            android:layout_marginEnd="@dimen/fifteenDp"
+            app:cardCornerRadius="@dimen/twentyDp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvTitle"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvTitle">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:src="@drawable/profile" />
+        </androidx.cardview.widget.CardView>
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/clCharging"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:background="@drawable/charging_background"
+            app:layout_constraintBottom_toTopOf="@+id/ivCar"
+            app:layout_constraintEnd_toEndOf="@+id/tvTitle"
+            app:layout_constraintStart_toStartOf="@+id/tvTitle"
+            app:layout_constraintTop_toBottomOf="@+id/tvTitle"
+            app:layout_constraintVertical_bias="0.78">
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivElectric"
+                android:layout_width="@dimen/twentyDp"
+                android:layout_height="@dimen/twentyDp"
+                android:layout_margin="@dimen/ten_dp"
+                android:src="@drawable/electricity"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvCharge"
+                style="@style/Text.Title.12sp.OffWhite.ProductSans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/ten_dp"
+                android:paddingEnd="@dimen/fifteenDp"
+                android:text="@string/charging"
+                android:textAllCaps="true"
+                app:layout_constraintBottom_toBottomOf="@+id/ivElectric"
+                app:layout_constraintStart_toEndOf="@+id/ivElectric"
+                app:layout_constraintTop_toTopOf="@+id/ivElectric" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvMil"
+            style="@style/Text.Title.40sp.ApproxBlack.poppinsMedium"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="@string/mile"
+            android:textAllCaps="false"
+            app:layout_constraintBottom_toTopOf="@+id/clCharging"
+            app:layout_constraintEnd_toEndOf="@+id/clCharging"
+            app:layout_constraintStart_toStartOf="@+id/clCharging" />
+
+        <androidx.core.widget.NestedScrollView
+            android:id="@+id/svBottom"
+            android:layout_width="match_parent"
+            android:layout_height="0dp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/ivCar">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent">
+
+                <include
+                    android:id="@+id/include_battery"
+                    layout="@layout/layout_battery_level"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="gone"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+                <include
+                    android:id="@+id/include_main_bottom"
+                    layout="@layout/layout_main_bottom"
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:visibility="visible"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_bias="0.5"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent"
+                    app:layout_constraintVertical_bias="0.5" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+        </androidx.core.widget.NestedScrollView>
+
+        <androidx.constraintlayout.widget.Group
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:id="@+id/hideMainGroup"
+            app:constraint_referenced_ids="tvMil,clCharging , ivCar ,svBottom "
+            />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>

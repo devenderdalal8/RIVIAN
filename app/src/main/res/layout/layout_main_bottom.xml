@@ -1,0 +1,398 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.core.widget.NestedScrollView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:layout_marginBottom="@dimen/fifteenDp"
+            android:background="@color/white">
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvEnergy"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_margin="@dimen/fifteenDp"
+                app:cardCornerRadius="@dimen/fifteenDp"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent"
+                    android:background="@color/green">
+
+                    <androidx.cardview.widget.CardView
+                        android:id="@+id/cvImage"
+                        android:layout_width="40dp"
+                        android:layout_height="40dp"
+                        android:layout_marginStart="@dimen/fifteenDp"
+                        android:layout_marginTop="@dimen/fifteenDp"
+                        app:cardCornerRadius="@dimen/ten_dp"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent">
+
+                        <androidx.appcompat.widget.AppCompatImageView
+                            android:id="@+id/ivImage"
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent"
+                            android:background="@color/darkgreen"
+                            android:foregroundGravity="center"
+                            android:paddingStart="@dimen/ten_dp"
+                            android:paddingEnd="@dimen/ten_dp"
+                            android:src="@drawable/ic_battery_charging_icon" />
+
+                    </androidx.cardview.widget.CardView>
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvEnergy"
+                        style="@style/Text.Title.20sp.OffWhite.ProductSans"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fifteenDp"
+                        android:text="@string/energy"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvImage"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/cvImage"
+                        app:layout_constraintTop_toTopOf="@+id/cvImage"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvCharging"
+                        style="@style/Text.Title.12sp.OffWhite.ProductSans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/fifteenDp"
+                        android:text="@string/charging"
+                        app:layout_constraintBottom_toBottomOf="@+id/cvImage"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvEnergy"
+                        app:layout_constraintTop_toBottomOf="@+id/tvEnergy" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/twentyDp"
+                        android:layout_marginEnd="@dimen/twentyDp"
+                        android:src="@drawable/ic_arrow_icon"
+                        app:layout_constraintBottom_toBottomOf="@+id/tvEnergy"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toEndOf="@+id/tvEnergy"
+                        app:layout_constraintTop_toTopOf="@+id/tvEnergy"
+                        app:layout_constraintVertical_bias="0.93" />
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivMile"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="48dp"
+                        android:layout_marginBottom="@dimen/fifteenDp"
+                        android:src="@drawable/ic_chart_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="@+id/cvImage"
+                        app:layout_constraintTop_toBottomOf="@+id/tvCharging" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvMiles"
+                        style="@style/Text.Title.30sp.OffWhite.ProductSans"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:text="@string/mile"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivMile"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.173"
+                        app:layout_constraintStart_toEndOf="@+id/ivMile"
+                        app:layout_constraintTop_toTopOf="@+id/ivMile"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvRecharging"
+                        style="@style/Text.Title.12sp.OffWhite.ProductSans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/remaining"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintHorizontal_bias="1.0"
+                        app:layout_constraintStart_toStartOf="@+id/tvMiles"
+                        app:layout_constraintTop_toBottomOf="@+id/tvMiles"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView2"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:layout_marginStart="@dimen/five_dp"
+                android:layout_marginEnd="@dimen/fifteenDp"
+                android:backgroundTint="@color/white"
+                android:elevation="@dimen/ten_dp"
+                app:cardCornerRadius="@dimen/fifteenDp"
+                app:cardElevation="@dimen/twentyDp"
+                app:layout_constraintBottom_toBottomOf="@+id/cvEnergy"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_weight="1"
+                app:layout_constraintStart_toEndOf="@+id/cvEnergy"
+                app:layout_constraintTop_toTopOf="@+id/cvEnergy">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivLocation"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/twelve_dp"
+                        android:layout_marginTop="@dimen/twelve_dp"
+                        android:src="@drawable/ic_location_icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvLocation"
+                        style="@style/Text.Title.20sp.ApproxBlack.ProductSans"
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fifteenDp"
+                        android:layout_marginEnd="@dimen/twentyDp"
+                        android:drawableEnd="@drawable/ic_black_arrow_icon"
+                        android:text="@string/energy"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivLocation"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/ivLocation"
+                        app:layout_constraintTop_toTopOf="@+id/ivLocation"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvParked"
+                        style="@style/Text.Title.16sp.ApproxBlack.ProductSans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/charging"
+                        app:layout_constraintStart_toStartOf="@+id/tvLocation"
+                        app:layout_constraintTop_toBottomOf="@+id/tvLocation" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/twentyFive_dp"
+                        android:backgroundTint="@color/graybg"
+                        app:cardCornerRadius="@dimen/fifteenDp"
+                        app:cardElevation="@dimen/twentyDp"
+                        app:layout_constraintEnd_toEndOf="@+id/tvLocation"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/ivLocation"
+                        app:layout_constraintTop_toBottomOf="@+id/ivLocation">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/appCompatTextView4"
+                                style="@style/Text.Title.18sp.ApproxBlack.ProductSans"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/fifteenDp"
+                                android:layout_marginEnd="@dimen/fifteenDp"
+                                android:maxLines="2"
+                                android:text="@string/location"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                style="@style/Text.Title.16sp.ApproxBlack.ProductSans"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/fifteenDp"
+                                android:text="@string/locationCountry"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/appCompatTextView4"
+                                app:layout_constraintTop_toBottomOf="@+id/appCompatTextView4" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cvTemp"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fifteenDp"
+                android:layout_marginEnd="@dimen/five_dp"
+                android:layout_marginBottom="@dimen/fifteenDp"
+                android:backgroundTint="@color/white"
+                android:elevation="@dimen/ten_dp"
+                app:cardCornerRadius="@dimen/fifteenDp"
+                app:cardElevation="@dimen/twentyDp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toStartOf="@+id/cardView3"
+                app:layout_constraintStart_toStartOf="@+id/cvEnergy"
+                app:layout_constraintTop_toBottomOf="@+id/cvEnergy">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivAiron"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fifteenDp"
+                        android:layout_marginTop="@dimen/fifteenDp"
+                        android:src="@drawable/ic_aircon_icon"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvAiron"
+                        style="@style/Text.Title.20sp.ApproxBlack.ProductSans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fifteenDp"
+                        android:layout_marginEnd="@dimen/fifteenDp"
+                        android:drawableEnd="@drawable/ic_black_arrow_icon"
+                        android:drawablePadding="@dimen/twentyFive_dp"
+                        android:text="@string/airon"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivAiron"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/ivAiron"
+                        app:layout_constraintTop_toTopOf="@+id/ivAiron"
+                        app:layout_constraintVertical_bias="0.0" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvOn"
+                        style="@style/Text.Title.12sp.ApproxBlack.ProductSans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/on"
+                        app:layout_constraintStart_toStartOf="@+id/tvAiron"
+                        app:layout_constraintTop_toBottomOf="@+id/tvAiron" />
+
+
+                    <androidx.cardview.widget.CardView
+                        android:layout_width="0dp"
+                        android:layout_height="wrap_content"
+                        android:layout_marginTop="@dimen/fifteenDp"
+                        android:layout_marginBottom="@dimen/fifteenDp"
+                        android:backgroundTint="@color/graybg"
+                        app:cardCornerRadius="@dimen/fifteenDp"
+                        app:cardElevation="@dimen/twentyDp"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintEnd_toEndOf="@+id/tvAiron"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toStartOf="@+id/ivAiron"
+                        app:layout_constraintTop_toBottomOf="@+id/ivAiron">
+
+                        <androidx.constraintlayout.widget.ConstraintLayout
+                            android:layout_width="match_parent"
+                            android:layout_height="match_parent">
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvTemp"
+                                style="@style/Text.Title.20sp.ApproxBlack.ProductSans"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_margin="@dimen/fifteenDp"
+                                android:text="@string/twentyFoueF"
+                                app:layout_constraintHorizontal_bias="0.5"
+                                app:layout_constraintStart_toStartOf="parent"
+                                app:layout_constraintTop_toTopOf="parent" />
+
+                            <androidx.appcompat.widget.AppCompatTextView
+                                android:id="@+id/tvInterior"
+                                style="@style/Text.Title.16sp.ApproxBlack.ProductSans"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginBottom="@dimen/fifteenDp"
+                                android:text="@string/interior"
+                                app:layout_constraintBottom_toBottomOf="parent"
+                                app:layout_constraintStart_toStartOf="@+id/tvTemp"
+                                app:layout_constraintTop_toBottomOf="@+id/tvTemp" />
+
+                            <androidx.appcompat.widget.SwitchCompat
+                                android:id="@+id/swTemp"
+                                android:layout_width="wrap_content"
+                                android:layout_height="wrap_content"
+                                android:layout_marginStart="@dimen/fifteenDp"
+                                android:layout_marginEnd="@dimen/seven_dp"
+                                android:enabled="true"
+                                android:thumb="@drawable/switch_thumb"
+                                app:layout_constraintBottom_toBottomOf="@+id/tvTemp"
+                                app:layout_constraintEnd_toEndOf="parent"
+                                app:layout_constraintStart_toEndOf="@+id/tvInterior"
+                                app:layout_constraintTop_toTopOf="@+id/tvTemp"
+                                app:track="@drawable/switch_track" />
+                        </androidx.constraintlayout.widget.ConstraintLayout>
+                    </androidx.cardview.widget.CardView>
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+            <androidx.cardview.widget.CardView
+                android:id="@+id/cardView3"
+                android:layout_width="0dp"
+                android:layout_height="0dp"
+                android:backgroundTint="@color/white"
+                android:elevation="@dimen/ten_dp"
+                app:cardCornerRadius="@dimen/fifteenDp"
+                app:cardElevation="@dimen/twentyDp"
+                app:layout_constraintBottom_toBottomOf="@+id/cvTemp"
+                app:layout_constraintEnd_toEndOf="@+id/cardView2"
+                app:layout_constraintStart_toStartOf="@+id/cardView2"
+                app:layout_constraintTop_toTopOf="@+id/cvTemp">
+
+                <androidx.constraintlayout.widget.ConstraintLayout
+                    android:layout_width="match_parent"
+                    android:layout_height="match_parent">
+
+                    <androidx.appcompat.widget.AppCompatImageView
+                        android:id="@+id/ivControl"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginStart="@dimen/fifteenDp"
+                        android:src="@drawable/ic_control_icon"
+                        app:layout_constraintBottom_toBottomOf="parent"
+                        app:layout_constraintStart_toStartOf="parent"
+                        app:layout_constraintTop_toTopOf="parent"
+                        app:layout_constraintVertical_bias="0.16000003" />
+
+                    <androidx.appcompat.widget.AppCompatTextView
+                        android:id="@+id/tvControl"
+                        style="@style/Text.Title.20sp.ApproxBlack.ProductSans"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:layout_marginEnd="@dimen/fifteenDp"
+                        android:drawableEnd="@drawable/ic_black_arrow_icon"
+                        android:drawablePadding="@dimen/twentyFive_dp"
+                        android:paddingStart="@dimen/fifteenDp"
+                        android:text="@string/control"
+                        app:layout_constraintBottom_toBottomOf="@+id/ivControl"
+                        app:layout_constraintEnd_toEndOf="parent"
+                        app:layout_constraintHorizontal_bias="0.0"
+                        app:layout_constraintStart_toEndOf="@+id/ivControl"
+                        app:layout_constraintTop_toTopOf="@+id/ivControl"
+                        app:layout_constraintVertical_bias="0.0" />
+
+
+                </androidx.constraintlayout.widget.ConstraintLayout>
+            </androidx.cardview.widget.CardView>
+
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.core.widget.NestedScrollView>
+</layout>

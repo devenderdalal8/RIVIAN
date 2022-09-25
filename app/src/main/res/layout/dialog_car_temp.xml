@@ -1,0 +1,140 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+
+    <androidx.cardview.widget.CardView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        app:cardElevation="@dimen/ten_dp"
+        app:cardCornerRadius="@dimen/ten_dp"
+        android:backgroundTint="@android:color/transparent"
+        android:layout_marginTop="@dimen/fifteenDp"
+        android:layout_marginStart="@dimen/thirty_dp"
+        android:layout_marginEnd="@dimen/thirty_dp"
+        >
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:background="@color/white">
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvInterior"
+                style="@style/Text.Title.16sp.ApproxBlack.ProductSans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fifteenDp"
+                android:text="@string/interiorTemp"
+                android:textColor="@color/naturalGray"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivFrontCar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:src="@drawable/ic_front_car_icon"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvInterior" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivMinus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fiftySP"
+                android:src="@drawable/ic_minus_settings_icon"
+                app:layout_constraintStart_toStartOf="@+id/ivFrontCar"
+                app:layout_constraintTop_toBottomOf="@+id/ivFrontCar" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMinTemp"
+                style="@style/Text.Title.16sp.ApproxBlack.ProductSans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fifteenDp"
+                android:text="@string/sixtyFiveTemp"
+                android:textColor="@color/tempGray"
+                android:textSize="@dimen/twentyEight_sp"
+                app:layout_constraintBottom_toBottomOf="@+id/ivMinus"
+                app:layout_constraintEnd_toStartOf="@+id/tvMainTemp"
+                app:layout_constraintStart_toEndOf="@+id/ivMinus"
+                app:layout_constraintTop_toTopOf="@+id/ivMinus" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMainTemp"
+                style="@style/Text.Title.16sp.ApproxBlack.ProductSans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/seventyFiveTemp"
+                android:textColor="@color/naturalGray"
+                android:textSize="@dimen/sixtyFour_sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvMinTemp"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="@+id/tvMinTemp" />
+
+            <androidx.appcompat.widget.AppCompatTextView
+                android:id="@+id/tvMaxTemp"
+                style="@style/Text.Title.16sp.ApproxBlack.ProductSans"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fifteenDp"
+                android:text="@string/EightyFiveTemp"
+                android:textColor="@color/tempGray"
+                android:textSize="@dimen/twentyEight_sp"
+                app:layout_constraintBottom_toBottomOf="@+id/tvMainTemp"
+                app:layout_constraintEnd_toStartOf="@+id/ivPlus"
+                app:layout_constraintStart_toEndOf="@+id/tvMainTemp"
+                app:layout_constraintTop_toTopOf="@+id/tvMainTemp" />
+
+            <androidx.appcompat.widget.AppCompatImageView
+                android:id="@+id/ivPlus"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/fiftySP"
+                android:src="@drawable/ic_plus_setting_icon"
+                app:layout_constraintEnd_toEndOf="@+id/ivFrontCar"
+                app:layout_constraintTop_toBottomOf="@+id/ivFrontCar" />
+
+            <androidx.appcompat.widget.AppCompatSeekBar
+                android:id="@+id/sbMain"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="@dimen/twentyDp"
+                android:background="@android:color/transparent"
+                android:progress="75"
+                android:progressDrawable="@drawable/custum_seekbar"
+                android:thumb="@drawable/seekbar_thumb"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/tvMainTemp" />
+
+            <androidx.appcompat.widget.AppCompatButton
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="@dimen/fifteenDp"
+                android:layout_marginTop="@dimen/thirtyFour_dp"
+                android:layout_marginEnd="@dimen/fifteenDp"
+                android:layout_marginBottom="@dimen/fifteenDp"
+                android:background="@drawable/button_background"
+                android:elevation="@dimen/fiftySP"
+                android:fontFamily="@font/product_sans_bold"
+                android:text="@string/turn_off"
+                android:textAllCaps="true"
+                android:textColor="@color/button"
+                android:textSize="@dimen/eighteen_dp"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintHorizontal_bias="0.5"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/sbMain"
+                app:layout_constraintVertical_bias="0.06999999" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+    </androidx.cardview.widget.CardView>
+</layout>

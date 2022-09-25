@@ -1,0 +1,89 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/white">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/ivLocation"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="@dimen/fifteenDp"
+            android:src="@drawable/ic_mini_location_icon"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAddress"
+            style="@style/Text.Title.20sp.ApproxBlack.ProductSans"
+            android:layout_width="0dp"
+            android:paddingEnd="@dimen/five_dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="@dimen/fifteenDp"
+            app:layout_constraintEnd_toStartOf="@+id/cvDirection"
+            app:layout_constraintStart_toEndOf="@+id/ivLocation"
+            app:layout_constraintTop_toTopOf="@+id/ivLocation"
+            tools:text="@string/address" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/tvAvailable"
+            style="@style/Text.Title.18sp.ApproxBlack.ProductSans"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            app:layout_constraintStart_toStartOf="@+id/tvAddress"
+            app:layout_constraintTop_toBottomOf="@+id/tvAddress"
+            tools:text="@string/available" />
+
+        <androidx.cardview.widget.CardView
+            android:id="@+id/cvDirection"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginEnd="@dimen/fifteenDp"
+            android:backgroundTint="@color/direction"
+            app:cardCornerRadius="@dimen/five_dp"
+            app:cardElevation="@dimen/fifteenDp"
+            app:layout_constraintBottom_toBottomOf="@+id/tvAvailable"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="@+id/tvAddress">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="match_parent"
+                android:orientation="vertical">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/ivDirection"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_margin="@dimen/five_dp"
+                    android:src="@drawable/ic_mini_direction_icon" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/tvDistance"
+                    style="@style/Text.Title.18sp.ApproxBlack.ProductSans"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_margin="@dimen/five_dp"
+                    tools:text="@string/_1_5mi" />
+            </LinearLayout>
+        </androidx.cardview.widget.CardView>
+
+        <View
+            android:id="@+id/view2"
+            android:layout_width="match_parent"
+            android:layout_height="1dp"
+            android:layout_margin="@dimen/fifteenDp"
+            android:background="@color/tempGray"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.5"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvAvailable"
+            app:layout_constraintVertical_bias="0.5" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
